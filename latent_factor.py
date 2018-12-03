@@ -190,16 +190,4 @@ algo.fit(trainset)
 predictions = algo.test(testset)
 accuracy.rmse(predictions)
 
-# Run K-fold cross-validation with k=5 to get the final RMSE 
-# K-fold cross-validation gives us the final unbiased RMSE score for our model
-# as it runs training and validation on 5 different training/validation splits of the original data
-# and takes the average
-# Note we run this after we've established the optimal parameters for the model from earlier runs
-# for the final result - in this case n_factors=5, n_epochs=20
-algo = SVD(n_factors=5, verbose=True)
-cross_validate(algo, data, measures='RMSE', cv=5, verbose=True)
-
-
-
-
 
